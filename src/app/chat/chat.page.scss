@@ -1,0 +1,13 @@
+/*#limiteListe{
+    height: 100%;
+    width: 50%;
+    overflow: scroll;
+}*/
+#listMessages{
+    overflow-y: auto;
+    max-height: 400px;
+
+}
+.my-custom-menu {
+    --width: 500px;
+}

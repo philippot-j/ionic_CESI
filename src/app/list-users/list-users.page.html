@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Liste des utilisateurs</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="divContent">
+  <ion-list id="listUsers" *ngIf="users">
+    <ion-item class="listItem" *ngFor="let user of users;">
+      <ion-label>{{user.username}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <div padding>
+    <ion-button id="refresh" (click)="listeUsers();" outline>Refresh</ion-button>
+  </div>
+  <div padding>
+    <ion-button [routerLink]="['/menu/chat']" outline>Back</ion-button>
+  </div>
+</ion-content>

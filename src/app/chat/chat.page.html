@@ -1,0 +1,38 @@
+<!--<ion-header>
+  <ion-toolbar>
+    <ion-title>chat</ion-title>
+  </ion-toolbar>
+</ion-header>-->
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Chat</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Liste des messages</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content id="cardMessages">
+      <ion-list id="listMessages" *ngIf="messages">
+        <ion-item class="listItem" *ngFor="let message of messages;">
+          <ion-label>{{message.username}}</ion-label>
+          <p>{{message.message}}</p>
+        </ion-item>
+      </ion-list>
+      <ion-input [(ngModel)]="msg" placeholder="Entrer un message"></ion-input>
+      <ion-button outline (click)="sendMessage();">Envoyer</ion-button>
+      <ion-button id="refresh" (click)="listeMessages();" outline>Refresh</ion-button>
+
+      <div padding>
+        <ion-button [routerLink]="['/home']" outline>Back</ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

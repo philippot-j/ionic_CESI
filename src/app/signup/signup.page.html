@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Signup</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  Salut, {{username}}
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Inscription</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-input [(ngModel)]="username" placeholder="Login" autofocus required></ion-input>
+      <ion-input [(ngModel)]="password" placeholder="Mot de passe" required type="password"></ion-input>
+      <ion-button outline (click)="signup();">Signup</ion-button>
+      <ion-button [routerLink]="['/home']" outline>Cancel</ion-button>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
